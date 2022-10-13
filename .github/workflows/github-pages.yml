@@ -26,13 +26,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           jekyll_src: 'docs'      
-  markdown-link-check:
-   runs-on: ubuntu-latest
-   steps:
-    - uses: actions/checkout@master
-    - uses: gaurav-nelson/github-action-markdown-link-check@v1
-      with:
-       use-quiet-mode: 'yes'
-       use-verbose-mode: 'yes'      
-       config-file: '.mlc_config.json'      
+    
     
