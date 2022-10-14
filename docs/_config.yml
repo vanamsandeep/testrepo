@@ -14,4 +14,4 @@ plugins:
   - jekyll-relative-links
   - jekyll-default-layout
   - jemoji
-  - kramdown-plantuml
+  - "kramdown-plantuml"
