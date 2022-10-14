@@ -29,6 +29,7 @@ jobs:
       - uses: helaili/jekyll-action@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          jekyll_src: 'docs'      
+          jekyll_src: 'docs' 
+          jekyll_build_options: --trace
     
     
