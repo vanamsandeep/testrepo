@@ -10,6 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Initial JDK setup
+        uses: actions/setup-java@v3
+        with:
+          java-version: 11
+          distribution: 'temurin'
+          
+      - name: Setup Graphviz
+        uses: ts-graphviz/setup-graphviz@v1
+        
       - uses: actions/cache@v2
         with:
           path: vendor/bundle
