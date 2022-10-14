@@ -9,26 +9,6 @@ jobs:
   github-pages:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup JDK
-        uses: actions/setup-java@v3
-        with:
-          java-version: 11
-          distribution: 'temurin'
-      - name: Cache Maven dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-maven-
-      - name: Maven install
-        run: mvn install
-
-      - name: Upload plantuml.jar artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: plantuml.jar
-          path: ~/.m2/repository/**/plantuml*.jar
-          
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
         with:
