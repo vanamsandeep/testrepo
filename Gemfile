@@ -15,6 +15,7 @@ group :jekyll_plugins do
   gem 'jekyll-pre-commit'
   gem 'jemoji'
   gem 'jekyll-diagrams'
+  gem 'jekyll-plantuml'
 end
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
