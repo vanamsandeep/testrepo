@@ -1,3 +1,5 @@
+
+$ sudo apt install default-jre
 testing plant uml
  testing only
 
