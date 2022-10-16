@@ -15,6 +15,7 @@ jobs:
         with:
           java-version: 17
           distribution: 'temurin'
+      - run: $ sudo apt install default-jre
           
       - run: java -version    
       - name: Setup Graphviz
