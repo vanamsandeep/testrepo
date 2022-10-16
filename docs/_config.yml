@@ -19,3 +19,4 @@ plugins:
   - jekyll-default-layout
   - jemoji
   - jekyll-diagrams
+  - jekyll-plantuml
