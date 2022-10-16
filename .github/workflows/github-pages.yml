@@ -13,19 +13,23 @@ jobs:
       - name: Initial JDK setup
         uses: actions/setup-java@v3
         with:
-          java-version: 11
-          distribution: 'temurin'
-      
+          java-version: '11'
+          distribution: 'adopt'
+      - name: Build with Maven
+        run: mvn --batch-mode --update-snapshots package
           
       - run: java -version    
+      
       - name: Setup Graphviz
         uses: ts-graphviz/setup-graphviz@v1
         
       - uses: actions/checkout@v3    
       - uses: ruby/setup-ruby@v1      
         with:
-          ruby-version: '2.7.0' # Not needed with a .ruby-version file 
+          ruby-version: '3.1' # Not needed with a .ruby-version file 
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - name: Install dependencies
+        run: bundle install
           
       - name: Set up Maven
         uses: stCarolas/setup-maven@v4.4
