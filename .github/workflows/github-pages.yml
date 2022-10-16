@@ -25,6 +25,10 @@ jobs:
         with:
           ruby-version: '2.7.0' # Not needed with a .ruby-version file 
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v4.4
+        with:
+          maven-version: 3.8.2
           
       - uses: actions/cache@v2
         with:
