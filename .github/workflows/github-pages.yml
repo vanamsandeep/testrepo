@@ -27,7 +27,7 @@ jobs:
           ruby-version: '3.1' # Not needed with a .ruby-version file 
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - name: Install dependencies
-        run: bundle install
+        run: bundle exec jekyll serve
           
       - name: Set up Maven
         uses: stCarolas/setup-maven@v4.4
