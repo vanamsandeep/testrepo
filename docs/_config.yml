@@ -7,7 +7,9 @@ baseurl: "/testrepo"
 
 github_username: vanamsandeep
 remote_theme: pages-themes/leap-day@v0.2.0
-markdown: kramdown
+commonmark:
+  options: ["SMART", "FOOTNOTES"]
+  extensions: ["strikethrough", "autolink", "table", "tagfilter"]
 plantuml:
     raise_errors: true
 plugins:
@@ -16,4 +18,4 @@ plugins:
   - jekyll-relative-links
   - jekyll-default-layout
   - jemoji
-  - kramdown-plantuml
+  - jekyll-diagrams
