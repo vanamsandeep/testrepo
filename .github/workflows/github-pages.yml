@@ -20,6 +20,7 @@ jobs:
       - run: java -version    
       - run: which java
       - run: printenv PATH
+      - run: printenv JAVAHOME
       
       - name: Setup Graphviz
         uses: ts-graphviz/setup-graphviz@v1
