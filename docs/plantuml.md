@@ -1,6 +1,11 @@
+
+$ sudo apt install default-jre
 testing plant uml
+ testing only
 
 ```plantuml
+{% plantuml %}
+@startuml
 skinparam linetype ortho
 
 rectangle ESP #lightblue
@@ -25,5 +30,18 @@ ESP <--> Roxie
 ECL -down-> worker1
 ECL -down-> worker2
 ECL -down-> worker3
-
+@enduml
+{% endplantuml %}
 ```
+test
+
+{% plantuml %}
+@startuml
+class Car
+
+Driver - Car : drives >
+Car *- Wheel : have 4 >
+Car -- Person : < owns
+
+@enduml
+{% endplantuml %}

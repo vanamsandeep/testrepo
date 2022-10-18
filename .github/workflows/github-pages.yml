@@ -9,30 +9,44 @@ jobs:
   github-pages:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup JDK
+      - uses: actions/checkout@v2
+      - name: Initial JDK setup
         uses: actions/setup-java@v3
         with:
-          java-version: 11
-          distribution: 'temurin'
+          java-version: '8'
+          distribution: 'adopt'
+      
+              
+      - run: java -version    
+      - run: sudo apt install default-jre
+      
+      - name: Setup Graphviz
+        uses: ts-graphviz/setup-graphviz@v1
+        
+      - uses: actions/checkout@v3    
+      - uses: ruby/setup-ruby@v1      
+        with:
+          ruby-version: '3.1' # Not needed with a .ruby-version file 
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - name: Install dependencies
+        run: bundle install
           
-      - uses: actions/checkout@v2
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v4.4
+        with:
+          maven-version: 3.8.2
+          
       - uses: actions/cache@v2
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
           restore-keys: |
-            ${{ runner.os }}-gems-
+            ${{ runner.os }}-gems-    
+          
       - uses: helaili/jekyll-action@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          jekyll_src: 'docs'      
-  markdown-link-check:
-   runs-on: ubuntu-latest
-   steps:
-    - uses: actions/checkout@master
-    - uses: gaurav-nelson/github-action-markdown-link-check@v1
-      with:
-       use-quiet-mode: 'yes'
-       use-verbose-mode: 'yes'      
-       config-file: '.mlc_config.json'      
+          jekyll_src: 'docs' 
+          jekyll_build_options: --trace
+    
     
