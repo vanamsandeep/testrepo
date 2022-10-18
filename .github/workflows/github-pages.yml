@@ -29,7 +29,6 @@ jobs:
           jekyll_src: 'docs' 
           jekyll_build_options: --trace
           pre_build_commands: |
-             apk add --update openjdk17
-             apk add --update graphviz
+             apk add openjdk11 graphviz fontconfig ttf-dejavu
             
     
