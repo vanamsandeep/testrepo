@@ -36,6 +36,7 @@ jobs:
           jekyll_src: 'docs' 
           jekyll_build_options: --trace
           pre_build_commands: |
+            ls $JAVA_HOME
             export PATH=$PATH:$JAVA_HOME/bin
             printenv PATH
             printenv JAVA_HOME
