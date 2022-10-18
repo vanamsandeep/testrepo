@@ -22,6 +22,7 @@ jobs:
       - run: printenv PATH
       - run: printenv JAVA_HOME
       - run: echo "${JAVA_HOME}/bin" >> $GITHUB_PATH
+      - run: cat $GITHUB_PATH
       
       - name: Setup Graphviz
         uses: ts-graphviz/setup-graphviz@v1
