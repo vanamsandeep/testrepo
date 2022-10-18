@@ -47,7 +47,6 @@ jobs:
           jekyll_src: 'docs' 
           jekyll_build_options: --trace
           pre_build_commands: |
-            java -version
             printenv PATH
             printenv JAVA_HOME
             
