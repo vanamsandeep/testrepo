@@ -16,17 +16,6 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
             
-      - name: Setup Graphviz
-        uses: ts-graphviz/setup-graphviz@v1
-        
-      - uses: actions/checkout@v3    
-      - uses: ruby/setup-ruby@v1      
-        with:
-          ruby-version: '3.1' # Not needed with a .ruby-version file 
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      - name: Install dependencies
-        run: bundle exec jekyll build
-          
       - name: Set up Maven
         uses: stCarolas/setup-maven@v4.4
         with:
@@ -47,6 +36,7 @@ jobs:
           jekyll_src: 'docs' 
           jekyll_build_options: --trace
           pre_build_commands: |
+            export PATH=$PATH:$JAVA_HOME/bin
             printenv PATH
             printenv JAVA_HOME
             
