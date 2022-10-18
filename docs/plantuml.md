@@ -4,7 +4,6 @@ testing plant uml
  testing only
 
 ```plantuml
-{% plantuml %}
 @startuml
 skinparam linetype ortho
 
@@ -31,11 +30,10 @@ ECL -down-> worker1
 ECL -down-> worker2
 ECL -down-> worker3
 @enduml
-{% endplantuml %}
 ```
 test
 
-{% plantuml %}
+
 @startuml
 class Car
 
@@ -44,4 +42,4 @@ Car *- Wheel : have 4 >
 Car -- Person : < owns
 
 @enduml
-{% endplantuml %}
+
