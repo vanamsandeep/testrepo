@@ -53,4 +53,4 @@ jobs:
           jekyll_src: 'docs' 
           jekyll_build_options: --trace
     
-    
+      - run: echo "$PATH"
